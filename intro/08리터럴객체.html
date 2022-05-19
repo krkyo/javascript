@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체</title>
+  <style>
+    section {height:150vh;}
+  </style>
+</head>
+<body>
+  <section><img src="./img/리터럴객체1.png" alt="" srcset="">
+    <ol>
+      <li>변수 1개에 다양한 형태의 값을 저장할수 있는것이 객체 (연관된 데이터와 함수(메소드)를 저장할 수 있음)</li>
+      <li>배열선언은 [ ... ] 대괄호, 객체 선언은 {...} 중괄호</li>
+      <li>배열과 객체의 차이점, key 값의 다양성과 value값의 다양성</li>
+      <li>배열은 key가 오로지, index는(0,1,2,3,4) 숫자 자동 key가 생성</li>
+      <li>객체는 key가 사용자 정의 key로 생성(문자)</li>
+      <li>객체의 값은, 값, 메소드, 배열 모두 저장할 수 있음</li>
+      <li>객체안의 함수는 "메소드" 라고 한다.</li>
+    </ol>
+    <ol>
+      <li>리터럴 객체는 프로퍼티로 정의된다. (key : value) = 1개의 프로퍼티</li>
+      <li>프로퍼티 접근 : object.프로퍼티명 or object['프로퍼티명']</li>
+      <li>프로퍼티 갱신 : object.프로퍼티명 = 값</li>
+      <li>프로퍼티 삭제 : delete object.프로퍼티명</li>
+      <li>배열은 key가 오로지, index는(0,1,2,3,4) 숫자 자동 key가 생성</li>
+      <li>객체는 key가 사용자 정의 key로 생성(문자)</li>
+      <li>객체의 값은, 값, 메소드, 배열 모두 저장할 수 있음</li>
+    </ol>
+  </h1>
+  </section>
+
+  <script>
+    var person = {
+      myLastName : "기호",
+      myFirstName : "김",
+      fullName : function(){
+        return this.myFirstName + this.myLastName;
+      },
+      myLanguage: ["C언어", "C++", "C#", "PHP", "Javascript"]
+    }
+
+    //person.myFirstName = "이";
+    //person.myLastName = "순신"; 
+    person.myHeight = 176;
+    person.myAddr = "서울 마포구 동교로 129";
+
+    person.fullIntro = function (){
+      return "내 이름은 " + this.myFirstName + this.myLastName + "입니다. 내 키는" + this.myHeight + "이고, 직장주소는 " + this.myAddr + " 입니다";
+    }
+    console.log(person.fullIntro());
+    console.log(person['myLastName']);
+
+    console.log(person);
+    console.log(person.myLanguage[2]);
+
+    for(var i = 0; i < person.myLanguage.length; i++){
+      console.log(person.myLanguage[i]);
+    }
+  </script>
+</body>
+</html>

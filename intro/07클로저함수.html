@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <style>
+    section {height:150vh;}
+    img {display:block;margin-bottom:20px;}
+  </style>
+</head>
+<body>
+  <section><img src="./img/클로저함수1.png" alt="" srcset="">
+  <h1>나는 아침을 먹습니다.</h1>
+  <h1>나는 점심을 먹습니다.</h1>
+  <h1>나는 저녁을 먹습니다.</h1>
+  <h1>나는 밤에 잠을 잡니다.</h1>
+
+  <a id="font14" href="#">body font 14로 변경</a>
+  <a id="font20" href="#">body font 20로 변경</a>
+  <a id="font55" href="#">body font 55로 변경</a>
+  </section>
+
+<script>
+
+//setFontSize = (fsize) => {
+setFontSize = function(fsize){
+  var fontSize = fsize;
+  return function(){
+    document.body.style.fontSize = fontSize+"px";
+  }
+}
+
+var f14 = document.getElementById('font14');
+var f20 = document.getElementById('font20');
+var f24 = document.getElementById('font55');
+
+func14 = setFontSize(14);
+func20 = setFontSize(20);
+func24 = setFontSize(55);
+
+
+f14.onclick = func14;
+f20.onclick = func20;
+f24.onclick = func24;
+
+//outter('나는 바로 실행되지 않아.');
+//var a = outter('나는 바로 실행되지 않아.');
+//a(); 
+/*
+// 일반함수
+function makeFunc(myName){
+  var name = myName;
+  console.log(name  + '는 사람이다');
+  return name;
+}
+*/
+
+/*
+// 클로저 함수
+function makeFunc(myName){
+  var name = myName;
+  
+  return function(){
+    console.log(name  + '는 사람이다');
+  }
+}
+
+var a = makeFunc;
+var b = makeFunc;
+a('ㅁㅁㅁ');
+b('ㅇㅇㅇ');
+*/
+
+</script>  
+</body>
+</html>

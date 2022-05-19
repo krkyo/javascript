@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수실습</title>
+</head>
+<body>
+  
+<script>
+/*
+함수 실습
+
+로스팅 마스터즈 메뉴판 : 
+아이스 아메라카노, 3500원
+아이스 라떼, 4000원
+아이스 바닐라라떼, 5000원
+
+메뉴판 배열변수 만들기 = 커피명과 가격으로 구성된 2차원배열 선언,  [ ['커피명',3500], [....], [....], [....] ]
+계산하여 console.log 찍는 함수 만들기, 함수 표현식 사용하기, 
+
+주문배열변수 만들기 = [ ['커피명1', 주문갯수], [...], [...] ]
+
+주문배열을 매개변수로 던져서 함수를 호출하면 아래와 같은 출력구문이 출력될수 있게 함수작성하기
+함수내에서, 커피가격은 메뉴판 배열변수를 참조하여 계산하기
+
+funcRoastingMastersPos(주문배열);
+
+결과문----
+
+손님 2명 카페 입장
+아이스 아메리카노 2잔, 주세요.
+주문가격 :
+7000
+주문하신 커피 나왔습니다.
+현재까지 총 방문자수 :2명
+현재까지 총 매출 :7000원
+=====================
+손님 4명 카페 입장
+아이스 아메리카노 3잔, 아이스 라떼 1잔, 주세요.
+주문가격 :
+14500
+주문하신 커피 나왔습니다.
+현재까지 총 방문자수 :6명
+현재까지 총 매출 :21500원
+=====================
+손님 4명 카페 입장
+아이스 라떼 3잔, 아이스 바닐라라떼 1잔, 주세요.
+주문가격 :
+17000
+주문하신 커피 나왔습니다.
+현재까지 총 방문자수 :10명
+현재까지 총 매출 :38500원
+=====================
+*/
+
+var arrMenupan = [ ['아이스 아메리카노', 3500], ['아이스 라떼', 4000], ['아이스 바닐라라떼', 5000] ];
+var totCnt = 0;
+var totAmt = 0;
+var orderMsg = "";
+
+funcRoastingMastersPos = function(msg) {
+  var orderCnt = 0;
+  var msgMerge = "";
+  var orderAmt = 0;
+  for(i = 0; i < msg.length; i++){
+    orderCnt += msg[i][1];
+    for(j = 0; j < arrMenupan.length; j++) {
+      if( msg[i][0] == arrMenupan[j][0] ){ 
+        orderAmt += (arrMenupan[j][1] * orderMsg[i][1]);
+        break;
+      }
+    }
+    msgMerge += msg[i][0] + " " + msg[i][1] + "잔, ";
+  }
+  totCnt += orderCnt;
+  totAmt += orderAmt;
+
+  console.log("손님 " + orderCnt + "명 카페 입장");
+  console.log(msgMerge + "주세요.");
+  console.log("주문가격 :");
+  console.log(orderAmt);
+  console.log("주문하신 커피 나왔습니다.");
+  console.log("현재까지 총 방문자수 :" + totCnt + "명");
+  console.log("현재까지 총 매출 :" + totAmt + "원");
+  console.log("=====================");
+}
+
+
+orderMsg = [ ['아이스 아메리카노', 2] ];
+funcRoastingMastersPos(orderMsg);
+
+orderMsg = [ ['아이스 아메리카노', 3],  ['아이스 라떼', 1] ];
+funcRoastingMastersPos(orderMsg);
+
+orderMsg = [  ['아이스 라떼', 3], ['아이스 바닐라라떼', 1] ];
+funcRoastingMastersPos(orderMsg);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <style>
+    section {height:150vh;}
+    img {display:block;margin-bottom:20px;}
+  </style>
+</head>
+<body>
+  
+  <section>
+    <h1>콜백함수</h1>
+    <ol>
+      <li>콜백함수란? 함수의 매개변수에 함수 자체를 매개변수로 넘겨서 하나의 함수호출로 2개의 함수를 실행시키는 함수</li>
+      <li>코드 재사용성을 높이기 위하여...</li>
+      <li>코드 관리가 쉽다.</li>
+      <li>특정함수의 실행이 종료된 후 다른 함수 바로 실행 - 순차적 실행</li>
+    </ol>
+  </section>
+  <section><img src="./img/콜백함수1.png" alt="" srcset=""></section>
+  
+<script>
+function intro(lastName, firstName, callback){
+  var fullName = lastName + firstName;
+
+  callback(fullName);
+}
+
+function sayHello(myName){
+  console.log("안녕하세요. 제 이름은 " + myName +" 입니다.")
+}
+function sayBye(myName){
+  console.log("지금까지 발표자 " + myName + "였습니다. 이만 여기서 마칩니다." );
+}
+
+intro('홍','길동',sayHello);
+intro('홍','길동',sayBye);
+intro('김','기호',sayHello);
+intro('김','기호',sayBye);
+
+intro('김','기호',function(myName){
+  console.log('방가방가~ 나는 ' + myName + "라고 해");
+});
+
+intro('김','기호',function(myName){
+  console.log('하이하이~ 나는 ' + myName + "라고 해");
+});
+
+intro('김','기호',function(myName){
+  console.log(' 앗뇽~! ' + myName + "라고 해");
+});
+
+
+</script>  
+</body>
+</html>

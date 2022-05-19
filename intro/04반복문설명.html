@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문 설명</title>
+</head>
+<body>
+
+  <script>
+    // 배열이란? 1개의 변수에 여러개의 값을 할당할 수 있는 자료구조, 문자열(String). 숫자형(Number) 와 또 다른 자료형이다.
+    // 비슷한 값들을 그룹핑 할때 사용 가능하다. 
+
+    // 배열은 Index와 Value가 있다. 
+    // 값(Value)에 접근하기 위해서는 순서번호(Index)를 이용하여 접근이 가능하다. 
+    // Index는 항상 0 부터시작한다. 
+    /*
+    ( 1번째의 Index는 0이다. )
+    ( 2번째의 Index는 1이다. )
+    ( 3번째의 Index는 2이다. )
+
+    // 배열(Array) 선언
+
+    () = 소괄호
+    {} = 중괄호
+    [] = 대괄호
+
+    */
+    // 변수선언 1
+    //var arrayClassName = new Array('1반','2반','3반','4반','5반');
+
+    // 변수선언 2 = 대괄호로 감싸서, value를 지정해준다. 
+    var examName = "2학년 중간고사";
+    var arrayClassName = ['1반','2반','3반','4반','5반']; 
+    var arrayClassPoint = [90,67,77,88,99,79]; 
+    var avgPoint = -1;
+        
+    // 배열 값접근 = 변수명[index]
+    //console.log("우리는 " + arrayClassName[3] +" 이다.");
+
+    // 배열 값할당
+    arrayClassName[2] = "3-1반";
+
+    // 배열 값추가
+    arrayClassName[5] = "6반";
+    
+    // 배열 길이(몇개있는지...) 조회
+    //console.log("배열길이 : " + arrayClassName.length);
+
+    // 배열 값 동적추가
+    // arrayClassName[arrayClassName.length] = (arrayClassName.length+1) + "반";
+    // arrayClassName[arrayClassName.length] = (arrayClassName.length+1) + "반";
+    // arrayClassName[arrayClassName.length] = (arrayClassName.length+1) + "반";
+    // arrayClassName[arrayClassName.length] = (arrayClassName.length+1) + "반";
+
+    console.log(arrayClassName);
+
+    console.log("우리는 "+ arrayClassName[0] + "이고, 반 평균점수는 " + arrayClassPoint[0] + "점 이다");
+    console.log("우리는 "+ arrayClassName[1] + "이고, 반 평균점수는 " + arrayClassPoint[1] + "점 이다");
+    console.log("우리는 "+ arrayClassName[2] + "이고, 반 평균점수는 " + arrayClassPoint[2] + "점 이다");
+    console.log("우리는 "+ arrayClassName[3] + "이고, 반 평균점수는 " + arrayClassPoint[3] + "점 이다");
+    console.log("우리는 "+ arrayClassName[4] + "이고, 반 평균점수는 " + arrayClassPoint[4] + "점 이다");
+    console.log("우리는 "+ arrayClassName[5] + "이고, 반 평균점수는 " + arrayClassPoint[5] + "점 이다");
+    avgPoint = ( arrayClassPoint[0] + arrayClassPoint[1] + arrayClassPoint[2] + arrayClassPoint[3] + arrayClassPoint[4] ) / 5
+    console.log("우리학년 평균점수는 " + avgPoint + "점 이다");
+
+    // 우리 게시판에 보면 게시글 노출할때....
+
+    console.log("<div><h1>공지사항</h1></div>");
+    console.log("<h1>    제목1</h1>");
+    console.log("<div>제목2</div>");
+    console.log("<div>제목3</div>");
+    console.log("<div>제목4</div>");
+    console.log("<div>제목5</div>");
+    console.log("<div>제목6</div>");
+    console.log("<div>제목7</div>");
+    console.log("<div>제목8</div>");
+    console.log("<div>제목9</div>");
+    console.log("<div>제목10</div>");
+  </script>
+</body>
+</html>

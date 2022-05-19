@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수설명</title>
+</head>
+<body>
+<script>
+
+// 함수 선언문은 호이스팅이 일어나서 제일 위로 끌어올려짐, 
+// 함수 선언문은 중복함수로 겹쳐져서, 코드가 엄청 길어졌을때, 오류를 일으킬수가 있음
+// 그래서 함수 표현식을 사용한다. 
+function printHello(){
+  console.log("안녕하세요. ");
+}
+printHello();
+
+/*
+함수는 무엇인가? 함수는 반복되는 일련의 행위를 반복해서 사용할 수 있도록 한다. 
+함수는 정해진 일련의 규칙적인 행동을 정의하고, 함수를 호출하여 편하게, 반복적인작업을 신뢰도 있게 실행 할 수 있다.
+
+함수는 주고 받는것~
+함수는 값을 주고, 값을 처리(가공) 후 값을 받는것~
+함수는 내가 함수를 선언하고, 값을 주고, 값을 처리, 값을 받는것~
+함수는 내가 함수를 선언하고, 함수를 호출(실행)하여 값을 주고, 값을 처리, 값을 받는것~
+*/
+
+
+// 함수를 선언함 = 함수 선언식
+// 내가 값전달해서 값 처리 후 값 받는다. 
+// 함수를 선언한것~
+function sumNum(num, num2=100){
+  var sumResult = num + num2;
+  return sumResult;
+}
+
+// sumNum 호출(실행)
+var resValue = sumNum(5, 10);
+var resValue2 = sumNum(10, 20);
+
+console.log(resValue);
+console.log(resValue2);
+console.log(sumNum(5));
+console.log(sumNum(10));
+
+// 원래 전통적인 방법은 매개변수의 갯수만큼, 함수 호출시 똑같이 갯수를 지정해줘야 오류가 안났는데, 
+// 이제는 그런거 없고, 걍 1개만 던져주고, 만약 값이 없을때에는 미리 매개변수에 값초기화 하므로, 값 1개만 던져도 계산되어져서 return 됨
+
+function printHello(){
+  console.log("Hello~~ ");
+}
+// 계산식의 함수
+
+// 함수 값을 주고, 받고의 행위없이, 그냥 함수호출 하여, 실행구문만 실행시킬때도 있다. 
+function printHead(){
+  console.log("나는 사이트 헤더다");
+}
+function printMain(){
+  console.log("나는 사이트 메인이다.");
+}
+function printFooter(){
+  console.log("나는 사이트 푸터다");
+}
+printHead();
+printMain();
+printFooter();
+
+printHello();
+printHello();
+
+var a = ['g','ag','g','g'];
+
+// 함수도 변수에 할당할 수 있음.
+
+// 함수 표현식, 익명함수(=이름이 없는 함수만듬과 동시에 변수에 할당)변수명이 곧 함수명이 됨~~~~~~~
+var printHello = function(){
+  console.log("안녕하세요~~반가워요.");
+}
+printHello();
+
+// 중간에 코드가 5000줄 있을때... 
+var printHello = function(){
+  console.log("Hello~~~~~");
+}
+printHello();
+
+
+(function(){
+  console.log("즉시실행함수");
+})();
+
+function funcArrPlus(asdfqwekrlj){
+  var retVal= [];
+  for(i = 0; i < asdfqwekrlj.length; i++){
+    retVal[i] = asdfqwekrlj[i] + 5;
+  }
+  return retVal;
+}
+
+var arrNum = [5,3,2,4,5];
+var arrVal = funcArrPlus(arrNum);
+console.log(arrVal);
+
+
+
+</script>
+</body>
+</html>

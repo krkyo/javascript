@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom</title>
+  <style>
+    section {height:150vh;}
+  </style>
+</head>
+<body>
+  <section>
+    <div>
+    <img src="./img/돔1.png" alt="" srcset="">
+  </div>
+  <div>
+    <img src="./img/돔2.png" alt="" srcset="">
+  </div>
+  <div>
+    <img src="./img/돔3.png" alt="" srcset="">
+  </div>
+  <ol>
+    <li>돔의 이해 : HTML문서를 작성하고, 브라우저가 HTML문서를 읽어들인 후 자바스크립트에서 쓰일수 있도록 트리구조화 한 인터페이스</li>
+    <li>console.log(document) </li>
+    <li>요소 선택자( id, name, tag name, class)</li>
+    <li>요소 선택자 아이디로 접근(1개) -  document.getElementById('id')</li>
+    <li>요소 선택자 속성명 name으로 접근(n개) -  document.getElementsByName('name')</li>
+    <li>요소 선택자 태그명으로 접근(n개) -  document.getElementsByTagName('div')</li>
+    <li>요소 선택자 클래스로 접근(n개) -  document.getElementById('id')</li>
+    <li>요소 선택자 모두 접근가능 (1개) - document.querySelector(선택자)
+      <ul>
+        <li>클래스로 접근 : document.querySelector('.class')</li>
+        <li>아이디로 접근 : document.querySelector('#id')</li>
+        <li>태그명 접근 : document.querySelector('div')</li>
+        <li>자식 접근 : document.querySelector('#id > .class')</li>
+      </ul>   
+    </li>
+    <li>요소 선택자 모두 접근가능 (n개) - document.querySelectorAll(선택자)
+      <ul>
+        <li>클래스로 접근 : document.querySelectorAll('.class')</li>
+        <li>아이디로 접근 : document.querySelectorAll('#id')</li>
+        <li>태그명 접근 : document.querySelectorAll('div')</li>
+        <li>자식 접근 : document.querySelectorAll('#id > .class')</li>
+      </ul>
+    </li>
+    <li>선택자에 클래스 읽기, 추가, 수정, 삭제, toggle
+      <ul>
+        <li>클래스 문자열로 읽기 : 선택자.classList</li>
+        <li>클래스 nodeList 총 갯수 읽기 :선택자.classList.length</li>
+        <li>클래스 1개씩 읽기 : for문 안에서, 선택자.classList.item(i)</li>
+        <li>클래스 추가 : 선택자.classList.add('클래스명')</li>
+        <li>클래스 추가(n개) : 선택자.classList.add('클래스명1','클래스명2')</li>
+        <li>클래스 변경 : 선택자.classList.replace('클래스명1','클래스명2')</li>
+        <li>클래스 삭제 : 선택자.classList.remove('클래스명1','클래스명2')</li>
+        <li>클래스 토글 (토글은 클래스가 있으면 없애고, 없으면 있게 하는게 toggle) : 선택자.classList.toggle('클래스명')</li>
+        <li>클래스 포함여부확인 return boolean : 선택자.classList.contain('클래스명')</li>
+      </ul>
+    </li>
+    <li>선택자에 style 읽기, 쓰기/변경
+      <ul>
+        <li>style 읽기 : 선택자.style.color</li>
+        <li>style 쓰기/변경 : 선택자.style.color = 'red'; </li>
+        <li>style 한꺼번에 쓰기(기존 style 모두 삭제 후, 다시 작성됨) : 선택자.style.cssText = 'border:1px solid red;color;blue';  </li>
+      </ul>
+    </li>
+    <li>참고 : <a href="https://developer.mozilla.org/ko/docs/Web/API/Document" target="_blank">https://developer.mozilla.org/ko/docs/Web/API/Document</a> </li>
+  </ol>
+  </h1>
+  </section>
+
+  <script>
+    console.log(document.children[0].clientHeight);
+    console.log(document.querySelector('div').innerHTML);
+  </script>
+</body>
+</html>

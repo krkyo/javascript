@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="F. 스콧 피츠제럴드">
+  <meta name="description" content="유명한 소설이고, 한번 읽어보시기 바랍니다.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>위대한 게츠비</title>
+</head>
+<body>
+  <div id="num">123</div>
+  <button id="plus5">+</button>
+
+<script>
+var num = 1;
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelector('#num').innerHTML = num;
+
+  document.querySelector('#plus5').addEventListener('click', function(){
+    num++;
+    console.log(num);
+    document.querySelector('#num').innerHTML = num;
+  });
+});
+$(function(){
+
+});
+
+$(document).ready(function(){
+  
+})
+/*
+// 콜백함수
+function test(num, callback){
+  console.log(num);
+  callback();
+}
+
+test(1, function(){
+  console.log('콜백함수');
+})
+*/
+
+//클로저 함수
+/*
+function ex_cl(){
+  var num = 0;
+  return function(){
+    num++;
+    console.log(num);
+  }
+}
+
+var test = ex_cl();
+test();
+test();
+test();
+*/
+</script>
+</body>
+</html>
