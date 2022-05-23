@@ -22,6 +22,12 @@
   <a id="font55" href="#">body font 55로 변경</a>
   </section>
 
+
+<div>
+  <p> 카운터 : <span id="spnCounter"></span></p>
+  <button id="incBtn">+</button>
+  <button id="decBtn">-</button>
+</div>
 <script>
 
 //setFontSize = (fsize) => {
@@ -44,6 +50,54 @@ func24 = setFontSize(55);
 f14.onclick = func14;
 f20.onclick = func20;
 f24.onclick = func24;
+
+
+
+var funcCounter = (function(){
+  var privateCounter = 0;
+  function changeBy(val){
+    privateCounter += val;
+  }
+  return {
+    increment: function(){
+      changeBy(1);
+    }, 
+    decrement: function(){
+      changeBy(-1);
+    },
+    value:function(){
+      return privateCounter;
+    }
+  }
+})();
+
+var funcCounter2 = {
+  privateCounter: 0,
+  increment: function(){
+    this.privateCounter++;
+  },
+  decrement: function(){
+    this.privateCounter--;
+  },
+  value: function(){
+    return this.privateCounter;
+  }
+}
+
+window.addEventListener('DOMContentLoaded', function(){
+  const spnCounter = document.querySelector('#spnCounter');
+  const incBtn = document.querySelector('#incBtn');
+  const decBtn = document.querySelector('#decBtn');
+
+  incBtn.addEventListener('click', function(){
+    funcCounter2.increment();
+    spnCounter.textContent = funcCounter2.value();
+  })
+  decBtn.addEventListener('click', function(){
+    funcCounter2.decrement();
+    spnCounter.textContent = funcCounter2.value();
+  })
+})
 
 //outter('나는 바로 실행되지 않아.');
 //var a = outter('나는 바로 실행되지 않아.');
